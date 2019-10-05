@@ -1,9 +1,8 @@
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.slider import Slider
 
 kv = '''
-<StretchSlider>
+<StretchSlider@Slider>
     Image:
         pos: (root.value_pos[0] - root.cursor_width / 2, root.center_y - root.cursor_height / 2) if root.orientation == 'horizontal' else (root.center_x - root.cursor_width / 2, root.value_pos[1] - root.cursor_height / 2)
         size: root.cursor_size 
@@ -88,10 +87,6 @@ BoxLayout:
                 size_hint_y: .1
                 text: '128x128'
 '''
-
-
-class StretchSlider(Slider):
-    pass
 
 
 class SliderCursorSizeApp(App):
